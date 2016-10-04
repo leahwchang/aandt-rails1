@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="form-control">
+  <div>
     <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
 
-  <div class="form-control">
+  <div>
     <%= f.label :body %>
-    <%= f.text_area :body %>
+    <%= f.cktext_area :body %>
   </div>
 
-  <div class="form-control">
+  <div>
     <%= f.label :slug %>
     <%= f.text_field :slug %>
   </div>
 
-  <div class="form-control">
+  <div>
     <%= f.label :category_id %>
-    <%= f.select :category_id, Category.all.map { |category| [category.name, category.id]}, class: "form-control" %>
+    <%= f.select :category_id, Category.all.map { |category| [category.name, category.id]} %>
   </div>
 
-  <div class="actions">
+  <div>
     <%= f.submit %>
   </div>
 <% end %>
