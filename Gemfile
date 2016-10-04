@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+# add rich text editor wysiwyg
+gem "ckeditor"
+gem "carrierwave"
+gem "mini_magick"
+gem "responders"
+
 # add bootstrap
 gem 'bootstrap'
 
