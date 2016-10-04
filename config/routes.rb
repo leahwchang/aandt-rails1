@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :categories, only: [:show]
-  resources :pages, only: [:show]
+  resources :categories, only: [:show, :index]
+  resources :pages, only: [:show, :index]
   
   namespace :admin do
   	resources :categories
@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   Page.where.not("slug", nil).all.each do |page|
   	get "/#{page.slug}", controller: "pages", action: "show", id: page.id
   end
-
-  root "pages#index"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

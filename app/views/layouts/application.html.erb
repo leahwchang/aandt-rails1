@@ -9,6 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav>
+    	<%= link_to "Content", admin_pages_path %>
+    	<%= link_to "Categories", admin_categories_path %>
+    </nav>
+      <%= yield %>
   </body>
 </html>
