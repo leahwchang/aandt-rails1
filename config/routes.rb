@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :categories, only: [:show, :index]
   resources :pages, only: [:show, :index]
@@ -6,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
   	resources :categories
   	resources :pages
+    resources :menus, except: [:show]
   end
 
   Page.where.not("slug", nil).all.each do |page|
