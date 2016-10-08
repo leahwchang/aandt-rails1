@@ -1,0 +1,20 @@
+<h1>Menus#index</h1>
+<p>Find me in app/views/menus/index.html.erb</p>
+
+<p>
+	<% @menus.each do |menu| %>
+		<li>
+			<%= menu.name %> 
+			<%= link_to "edit", edit_admin_menu_path(menu) %> 
+		</li>
+		<ul>
+			<% menu.menu_items.each do |item| %>
+				<li><%= link_to item.title, url_for_menu_item(item) %></li>
+			<% end %>
+		</ul>
+	<% end %>
+</p>
+
+<p>
+	<%= link_to "New Menu", new_admin_menu_path %>
+</p>
