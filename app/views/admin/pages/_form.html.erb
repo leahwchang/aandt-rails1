@@ -17,6 +17,19 @@
   </div>
 
   <div>
+    <h3>Custom Fields</h3>
+    <p>
+      <%= f.fields_for :fields do |c| %>
+        <p>
+          <%= c.label :value, c.object.field_definition.key %>
+          <%= c.text_field :value %>
+          <%= c.hidden_field :field_definition_id %>
+        </p>
+      <% end %>
+    </p>
+  </div>
+
+  <div>
     <%= f.label :body %>
     <%= f.cktext_area :body %>
   </div>
@@ -29,6 +42,10 @@
   <div>
     <%= f.label :category_id %>
     <%= f.select :category_id, Category.all.map { |category| [category.name, category.id]} %>
+  </div>
+
+  <div>
+    <%= f.hidden_field :type_id %>
   </div>
 
   <div>
