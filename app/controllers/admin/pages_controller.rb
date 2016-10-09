@@ -29,7 +29,8 @@ module Admin
     # POST /pages.json
     def create
       @page = Page.new(page_params)
-
+      # read routes file, refresh pages and create routes
+      Rails.application.reload_routes!
       respond_to do |format|
         if @page.save
           format.html { redirect_to admin_page_path(@page), notice: 'Page was successfully created.' }
@@ -46,6 +47,8 @@ module Admin
     def update
       respond_to do |format|
         if @page.update(page_params)
+          # read routes file, refresh pages and create routes
+          Rails.application.reload_routes!
           format.html { redirect_to admin_page_path(@page), notice: 'Page was successfully updated.' }
           format.json { render :show, status: :ok, location: @page }
         else

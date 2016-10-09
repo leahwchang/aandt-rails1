@@ -9,6 +9,17 @@
 </p>
 
 <p>
+	<% @page.fields.each do |field| %>
+		<p>
+			<%= field.field_definition.key %>
+		</p>
+		<p>
+			<%= field.value %>
+		</p>
+	<% end %>
+</p>
+
+<p>
   <%= @page.body.html_safe %>
 </p>
 
