@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :index]
   resources :pages, only: [:show, :index]
   
+  # admin only
   namespace :admin do
   	resources :categories
   	resources :pages
     resources :menus, except: [:show]
+    resources :types, except: [:show]
   end
 
   Page.where.not("slug", nil).all.each do |page|
