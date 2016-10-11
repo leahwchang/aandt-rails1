@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   	resources :pages
     resources :menus, except: [:show]
     resources :types, except: [:show]
+    resources :settings, only: [:index, :update]
   end
 
   Page.where.not("slug", nil).all.each do |page|

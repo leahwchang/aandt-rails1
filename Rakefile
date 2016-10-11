@@ -4,3 +4,11 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+namespace :cms do
+	desc "Bootstraps the CMS with default settings."
+	task bootstrap: :environment do
+		Page.create! title: "Demo Page", body: "Hello!", slug: "demo"
+		Setting.create! key: "homepage", value: "/demo"
+	end
+end

@@ -8,6 +8,15 @@ module ApplicationHelper
     root_path + path
   end
 
+  # def url_for_category category
+  #   path = if category.name.present?
+  #     category.name
+  #   else
+  #     "categories/#{category.id}"
+  #   end
+  #   root_path + path
+  # end
+
   def url_for_menu_item menu_item
     if menu_item.url.match /:\/\// # http://, ftp://, etc.
       menu_item.url
