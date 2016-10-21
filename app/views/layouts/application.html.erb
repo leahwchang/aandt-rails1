@@ -6,8 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- mobile first -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- bootstrap mobile first -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- mobile first - no zooming -->
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
 
@@ -15,17 +16,9 @@
 
   <body>
     <nav>
-    	<%= link_to "Content", admin_pages_path %>
-    	<%= link_to "Categories", admin_categories_path %>
-      <%= link_to "Menus", admin_menus_path %>
-      <%= link_to "Types", admin_types_path %>
-      <% if user_signed_in? %>
-        <h3> Signed in as <%= current_user.name %> </h3>
-        <%= link_to "Log out.", destroy_user_session_path, method: :delete %>
-        <% end %>
     </nav>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <!-- <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> -->
       <%= yield %>
   </body>
 </html>
