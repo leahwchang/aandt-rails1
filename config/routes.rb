@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :pages
+
   devise_for :users
   resources :users
+  resources :pages
   # devise_for :users
   # mount Ckeditor::Engine => '/ckeditor'
   
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
   # end
 
   # root 'admin/pages#index'
-  root to: "users#index"
+  root to: "pages#index"
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
